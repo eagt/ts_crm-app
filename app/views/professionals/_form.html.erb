@@ -1,0 +1,64 @@
+
+<%= error_messages_for(@professional) %>
+
+	<table summary = " Professional Form fields " >
+	<!-- This template will work only if I give or set a value to the variable f in the new and edit templates-->
+	 
+
+	 <tr>
+		<th><%= f.label(:id_code, "ID") %></th>
+		<td><%= f.text_field(:id_code) %></td>
+	 </tr>
+
+	 <tr>
+		<th><%= f.label(:first_name, "First Name") %></th>
+		<td><%= f.text_field(:first_name) %></td>
+	 </tr>
+
+	  <tr>
+		<th><%= f.label(:last_name, "Last Name") %></th>
+		<td><%= f.text_field(:last_name) %></td>
+	 </tr>
+
+	 <tr>
+		<th><%= f.label(:dob, "D.o.B") %></th>
+		<td><%= f.text_field(:dob) %></td>
+	 </tr>
+
+
+	 <tr>
+		<th><%= f.label(:email, "email") %></th>
+		<td><%= f.text_field(:email) %></td>
+	 </tr>
+
+
+	  <tr>
+		<th><%= f.label(:specialty, "Specialty") %></th>
+		<td><%= f.text_field(:specialty) %></td>
+	 </tr>
+
+
+	 <tr>
+		<th><%= f.label(:pass_active) %></th>
+		<td><%= f.check_box(:pass_active) %></td>
+	 </tr>
+
+	  <tr>
+		<th><%= f.label(:acc_active) %></th>
+		<td><%= f.check_box(:acc_active) %></td>
+	 </tr>
+
+
+	 <tr>
+		<th><%= f.label(:password_digest, "Password Digest") %></th>
+		<td><%= f.text_field(:password_digest) %></td>
+	 </tr>
+
+
+	 <!-- This datetime is done just for practice to see how it works. Creates-at and updated_at are normally done by Rails -->
+	 <tr>
+		<th><%= f.label(:last_in) %></th>
+		<td><%= f.datetime_select(:last_in, :order => [:month, :day, :year]) %></td>
+	 </tr>
+
+	</table>

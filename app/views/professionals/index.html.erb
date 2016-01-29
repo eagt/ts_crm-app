@@ -1,0 +1,101 @@
+
+<% @page_tittle = " Professionals" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+
+
+<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			
+
+<% if !flash[:notice].blank? %>
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+
+
+<div class="professional index">
+	
+		<h2> Professionals </h2>
+
+		
+
+		<%= link_to(image_tag('plus_sign.png', :size => '15x15', :alt => '+') + "  Add New Professional", {:action =>'new'}, :class => 'action new') %>
+		
+	<!-- Here I will pluralize to say how many subjects are/is found -->
+
+		<div><%= pluralize(@professionals.size, 'professional') %> found</div>
+
+		
+		<table class= "listing" summary="Professional List">
+			<tr class="header">
+			<th>&nbsp;</th>
+			<th> ID </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> First Name </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Last Name </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Specialty</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Branches </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Clients </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Appointments </th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th> Actions</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+
+		<% @professionals.each do |professional| %>
+
+		<tr class=" cycle('odd', 'even') %">
+
+			
+			<td><%= professional.id_code %></td>
+			<td><%= professional.first_name %></td>
+			<td><%= professional.last_name %></td>
+			
+			<td><%= professional.specialty %></td>
+			
+
+			<!-- This one is calling the status application helper set on the Application Helper, see the cms project for reference --> 
+
+
+			<!-- I think I can place above a code that indicates if the professional account is active or not, but I have to search for the way of doing it -->
+
+			<td class="center"><%= professional.branches.size %></td> 
+			<td class="center"><%= professional.clients.size %></td> 
+			<td class="center"><%= professional.professional_appointments.size %></td> 
+
+			<td class="actions">
+
+				<%= link_to("Show", {:action => 'show', :id => professional.id}, :class => 'action show') %>
+
+				<%= link_to("Edit", {:action => 'edit', :id => professional.id}, :class => 'action edit') %>
+				
+				<%= link_to("Delete", {:action => 'delete', :id => professional.id},:class => 'action delete') %>
+
+				<%= link_to("View Branches", {:controller => 'Branches', :professional_id => professional.id}, :class => 'action show') %>
+
+				<%= link_to("View Clients", {:controller => 'clients', :professional_id => professional.id}, :class => 'action show') %>
+
+				<%= link_to("View Appointments", {:controller => 'professional_appointments', :professional_id => professional.id}, :class => 'action show') %>				
+
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+

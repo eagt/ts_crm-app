@@ -1,0 +1,89 @@
+
+
+<% @page_tittle = "Show Professionals" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+
+<% if !flash[:notice].blank? %>
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+
+
+<div class="professionals show">
+	<h2> Show Professional </h2>
+
+	<table summary = " Professional details view " >	
+	
+	 <tr>
+		<th> ID </th>
+		<td><%= @professional.id_code %></td>
+	 </tr>
+
+
+	 <tr>
+		<th> First Name </th>
+		<td><%= @professional.first_name %></td>
+	 </tr>
+
+	 <tr>
+		<th> Last Name </th>
+		<td><%= @professional.last_name  %></td>
+	 </tr>
+
+
+	 <tr>
+		<th> D.o.B </th>
+		<td><%= @professional.dob  %></td>
+	 </tr>
+
+
+	 <tr>
+		<th> email </th>
+		<td><%= @professional.email  %></td>
+	 </tr>
+
+
+	<tr>
+		<th> Specialty </th>
+		<td><%= @professional.specialty %></td>
+	 </tr>
+
+	<!--   <tr>
+		<th> Password Active</th>
+		<td><%= @professional.pass_active ? 'true' : 'false' %></td>
+	 </tr>
+
+	  <tr>
+		<th> Account Active </th>
+		<td><%= @professional.acc_active ? 'true' : 'false' %></td>
+	 </tr>
+
+	  <tr>
+		<th> Password Digest </th>
+		<td><%= @professional.password_digest ? 'true' : 'false' %></td>
+	 </tr>
+
+
+	 <tr>
+		<th> Last in </th>
+		<td><%= @professional.last_in %></td>
+	 </tr> -->
+
+
+	 <tr>
+		<th> Created at </th>
+		<td><%= @professional.created_at %></td>
+	 </tr>
+
+	 <tr>
+		<th> Updated at </th>
+		<td><%= @professional.updated_at %></td>
+	 </tr>
+
+	</table>
+
+</div>

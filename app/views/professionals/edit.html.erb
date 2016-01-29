@@ -1,0 +1,80 @@
+<!--  The partial form is denoted by the underscore symbol(_) before the name of the form -->
+
+<% @page_tittle = "Update Professional" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="professionals edit"> 
+	<h2>  Update Professional </h2>
+
+
+	<%= form_for(:professional, :url => {:action => 'update', :id => @professional.id } ) do |f| %>
+
+		<table summary = " Professional form fields " >	
+			
+			 <tr>
+				<th> ID </th>
+				<td><%= f.text_field(:id_code) %></td>
+			 </tr>
+
+
+			 <tr>
+				<th> First Name </th>
+				<td><%= f.text_field(:first_name) %></td>
+			 </tr>
+
+			 <tr>
+				<th> Last Name </th>
+				<td><%= f.text_field(:last_name)  %></td>
+			 </tr>
+
+
+			 <tr>
+				<th> D.o.B </th>
+				<td><%= f.text_field(:dob) %></td>
+			 </tr>
+
+
+			 <tr>
+				<th> email </th>
+				<td><%= f.text_field(:email)  %></td>
+			 </tr>
+
+
+			<tr>
+				<th> Specialty </th>
+				<td><%= f.text_field(:specialty) %></td>
+			 </tr>
+
+			  <!-- <tr>
+				<th> Password Active</th>
+				<td><%= f.text_field(:pass_active) %></td>
+			 </tr>
+
+			  <tr>
+				<th> Account Active </th>
+				<td><%= f.text_field(:acc_active) %></td>
+			 </tr>
+
+			  <tr>
+				<th> Password Digest </th>
+				<td><%= f.text_field(:password_digest) %></td>
+			 </tr>
+
+			 <tr>
+				<th> Last in </th>
+				<td><%= f.text_field(:last_in) %></td>
+			 </tr> -->
+
+		</table>
+
+
+			<div class="form_buttons">
+
+		       <%= submit_tag("Update Professional") %>
+
+			</div>
+
+	<% end %>
+
+</div>
