@@ -81,11 +81,11 @@
 
 			<td class="actions">
 
-				<%= link_to("Show", {:action => 'show', :id => professional.id}, :class => 'action show') %>
+				<%= link_to('Show Professional', professional_path(professional.id)) %>
 
-				<%= link_to("Edit", {:action => 'edit', :id => professional.id}, :class => 'action edit') %>
-				
-				<%= link_to("Delete", {:action => 'delete', :id => professional.id},:class => 'action delete') %>
+				<%= link_to('Edit Professional', edit_professional_path(professional.id)) %>
+
+				<%= link_to('Delete Professional', delete_professional_path(professional.id)) %>
 
 				<%= link_to("View Branches", {:controller => 'Branches', :professional_id => professional.id}, :class => 'action show') %>
 
@@ -97,5 +97,8 @@
 		</tr>
 		<% end %>
 	</table>
+
+	<% end %>
+
 </div>
 

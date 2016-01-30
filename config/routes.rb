@@ -12,6 +12,16 @@ Rails.application.routes.draw do
 
   # get 'professional_appointments/delete'
 
+  resources :professionals do
+
+    member do
+      get :delete
+    end
+
+  end    
+
+
+
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
