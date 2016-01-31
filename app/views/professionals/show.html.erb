@@ -1,8 +1,8 @@
 
 
-<% @page_tittle = "Show Professionals" %>
+<% @page_tittle = "Show" %>
 
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<%= link_to('<< All Professionals', professionals_path) %> 
 
 
 <% if !flash[:notice].blank? %>
@@ -14,6 +14,7 @@
 
 
 <div class="professionals show">
+	
 	<h2> Show Professional </h2>
 
 	<table summary = " Professional details view " >	

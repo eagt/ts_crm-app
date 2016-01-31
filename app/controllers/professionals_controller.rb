@@ -19,7 +19,7 @@ class ProfessionalsController < ApplicationController
 
   def new
 
-     @sprofessional = Professional.new({:first_name => " Enter the  Professional name"})
+     @professional = Professional.new({:first_name => " Enter the  Professional name"})
        @professional_count = Professional.count + 1
 
   end
@@ -27,7 +27,6 @@ class ProfessionalsController < ApplicationController
   def create
 
     #Instantiate the new object using the form parameters
-
     @professional  = Professional.new(professional_params)
 # Save the object
     flash[:notice] = " Professional '#{@professional.first_name}' created successfully!"
@@ -53,7 +52,6 @@ end
   def update
 
      #Find an existing object using the form parameters
-
       @professional = Professional.find(params[:id])
      
       # Update the object
@@ -94,7 +92,7 @@ end
     # - raises an error if :subject is not present
     # - allows listed attributes to be mass-assigned
     params.require(:professional).permit(:id_code, :first_name, :last_name, :dob, :email, :specialty, 
-      :pass_active, :acc_active, :paswword_digest, :last_in)
+      :pass_active, :acc_active, :pasword_digest, :last_in)
   end
 
 

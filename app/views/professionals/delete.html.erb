@@ -1,13 +1,13 @@
 
-<% @page_tittle = "Delete Professional" %>
+<% @page_tittle = "Delete" %>
 
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<%= link_to('<< All Professionals', professionals_path) %> 
 
 <div class="professionals delete">
 	<h2> Delete Professional </h2>
 
 
-<%= form_for(:professional, :url => {:action => 'destroy', :id => @professional.id}) do |f| %>
+<%= form_for(:professional, :url => professional_path(@professional.id), :html => {:method => :delete}) do |f| %>
 
 
 	<p> Are you sure you want to permanently delete this professional? </p>
