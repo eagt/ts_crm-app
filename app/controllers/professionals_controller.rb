@@ -1,6 +1,8 @@
 class ProfessionalsController < ApplicationController
 
-  layout false
+  layout "professional"
+
+  before_action :set_locale
 
 
   def index
@@ -20,7 +22,7 @@ class ProfessionalsController < ApplicationController
   def new
 
      @professional = Professional.new({:first_name => " Enter the  Professional name"})
-       @professional_count = Professional.count + 1
+     @professional_count = Professional.count + 1
 
   end
 
@@ -29,9 +31,10 @@ class ProfessionalsController < ApplicationController
     #Instantiate the new object using the form parameters
     @professional  = Professional.new(professional_params)
 # Save the object
-    flash[:notice] = " Professional '#{@professional.first_name}' created successfully!"
+   
     if @professional.save
 # If the save succeed, it will redirect some where (this case, index action)
+    flash[:notice] = " Professional '#{@professional.first_name}' created successfully!"
     redirect_to(:action => 'index')
     
     else 
@@ -86,6 +89,10 @@ end
 
 
   private
+
+   def set_locale
+      I18n.locale = params[:locale] || I18n.default_locale
+    end
 
   def professional_params
     # same as using "params[:subject]", except that it:

@@ -1,3 +1,4 @@
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -20,4 +21,45 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  view_branches: View Branches
+  view_clients: View Clients
+  view_appointments: Ver Appointments
+  home: Home
+  setting: Setting
+  profile: Profile
+  help: Help
+  contact: Contact
+  branch: Branch
+  found: found
+  return_to: Return to list
+  action: Action
+  create: Create
+  show: Show
+  edit: Edit
+  update: Update
+  delete: Delete
+  professional: Professional
+  add_new_professional: Add new professional
+  first_name: Name
+  last_name: Last Name
+  email: e-mail
+  id: ID
+  id_code: ID No.
+  dob: Date of Birth
+  speciality: Specialty
+  company: Company
+  client: Client
+  appointment: Appointment
+  pass_active: Password Active?
+  acc_active: Account Active?
+  created_at: Created at
+  updated_at: Updated at
+  last_in: Last login
+  create_success: created successfully
+  update_success: updated successfully
+  delete_message: Are you sure you want to delete this record permanently?
+  destroy_success: destroyed successfully!
+  save_error: prohibited this record from being saved
+  field_prob: There were problems with the following fields
+
+
