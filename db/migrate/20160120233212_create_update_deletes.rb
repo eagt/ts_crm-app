@@ -11,7 +11,7 @@ class CreateUpdateDeletes < ActiveRecord::Migration
     	t.integer "contact_details_id" 
 
       t.integer "employment_id"       
-      t.integer "company_appointments_id"  
+      t.integer "appointments_id"  
       t.integer "professional_appointments_id"   
       t.integer "update_deletes_id" 
      
@@ -40,8 +40,7 @@ class CreateUpdateDeletes < ActiveRecord::Migration
 
      	add_index("update_deletes", "contact_details_id")
       add_index("update_deletes", "employment_id")
-      add_index("update_deletes", "company_appointments_id")
-      add_index("update_deletes", "professional_appointments_id")
+      add_index("update_deletes", "appointments_id")
       
       add_index("update_deletes", "update_deletes_id")
    

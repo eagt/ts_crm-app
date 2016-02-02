@@ -13,6 +13,34 @@
 
 ActiveRecord::Schema.define(version: 20160126212727) do
 
+  create_table "appointments", force: :cascade do |t|
+    t.integer  "company_id",                limit: 4
+    t.integer  "branch_id",                 limit: 4
+    t.integer  "professional_id",           limit: 4
+    t.integer  "client_id",                 limit: 4
+    t.integer  "appointment_id",            limit: 4
+    t.datetime "date_time",                                               null: false
+    t.string   "status",                    limit: 255
+    t.string   "photo",                     limit: 255
+    t.string   "task_type",                 limit: 50
+    t.text     "task_note",                 limit: 65535
+    t.float    "total_project_price",       limit: 24
+    t.float    "task_payment",              limit: 24
+    t.float    "professional_fee",          limit: 24
+    t.float    "remaining_project_payment", limit: 24
+    t.boolean  "needs_folloup",                           default: false
+    t.float    "created_by§",               limit: 24
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+  end
+
+  add_index "appointments", ["appointment_id"], name: "index_appointments_on_appointment_id", using: :btree
+  add_index "appointments", ["branch_id"], name: "index_appointments_on_branch_id", using: :btree
+  add_index "appointments", ["client_id"], name: "index_appointments_on_client_id", using: :btree
+  add_index "appointments", ["company_id"], name: "index_appointments_on_company_id", using: :btree
+  add_index "appointments", ["date_time"], name: "index_appointments_on_date_time", using: :btree
+  add_index "appointments", ["professional_id"], name: "index_appointments_on_professional_id", using: :btree
+
   create_table "branches", force: :cascade do |t|
     t.integer  "company_id",      limit: 4
     t.string   "id_code",         limit: 25
@@ -195,7 +223,7 @@ ActiveRecord::Schema.define(version: 20160126212727) do
     t.integer  "client_id",                    limit: 4
     t.integer  "contact_details_id",           limit: 4
     t.integer  "employment_id",                limit: 4
-    t.integer  "company_appointments_id",      limit: 4
+    t.integer  "appointments_id",              limit: 4
     t.integer  "professional_appointments_id", limit: 4
     t.integer  "update_deletes_id",            limit: 4
     t.string   "first_name",                   limit: 255
@@ -210,13 +238,12 @@ ActiveRecord::Schema.define(version: 20160126212727) do
     t.datetime "updated_at",                                 null: false
   end
 
+  add_index "update_deletes", ["appointments_id"], name: "index_update_deletes_on_appointments_id", using: :btree
   add_index "update_deletes", ["branch_id"], name: "index_update_deletes_on_branch_id", using: :btree
   add_index "update_deletes", ["client_id"], name: "index_update_deletes_on_client_id", using: :btree
-  add_index "update_deletes", ["company_appointments_id"], name: "index_update_deletes_on_company_appointments_id", using: :btree
   add_index "update_deletes", ["company_id"], name: "index_update_deletes_on_company_id", using: :btree
   add_index "update_deletes", ["contact_details_id"], name: "index_update_deletes_on_contact_details_id", using: :btree
   add_index "update_deletes", ["employment_id"], name: "index_update_deletes_on_employment_id", using: :btree
-  add_index "update_deletes", ["professional_appointments_id"], name: "index_update_deletes_on_professional_appointments_id", using: :btree
   add_index "update_deletes", ["professional_id"], name: "index_update_deletes_on_professional_id", using: :btree
   add_index "update_deletes", ["update_deletes_id"], name: "index_update_deletes_on_update_deletes_id", using: :btree
 

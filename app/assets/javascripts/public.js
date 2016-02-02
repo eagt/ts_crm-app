@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
-
+//= require jquery.dataTables.min
+//= require dataTables.responsive.min
+//= require dataTables.fixedHeader.min
+//= require moment
+// require bootstrap-datetimepicker
+//= require moment/es

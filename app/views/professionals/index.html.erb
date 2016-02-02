@@ -1,3 +1,5 @@
+
+
 <% @page_title = t(:professional).pluralize(locale) %>
 
 <div class="professionals index">
@@ -7,17 +9,15 @@
   <div><%= @professionals.size.to_s + " " + t(:professional).pluralize(@professionals.size, locale) + " " + t(:found) %></div> <!-- Here there is a way to pluralize the Object and to translate the variables -->
 
 
- This is going to be commented until understanding where is it comming from
-		  <div class="table-responsive">
-		    <table id="index_table" class="display responsive" summary="Professional list">
-		      <thead class="thead-inverse">        
 
-		      	 <table class= "listing" summary="Professional List">
-				<tr class="header">
+	<div class="table-responsive">
 
-
-		      	<tr>
-		      	 <th>&nbsp;</th>
+	<%= javascript_tag("$('#index_table').DataTable( {responsive: true, fixedHeader: true} );") %>
+		
+    <table id="index_table" class="display responsive" summary="Professional list">
+      <thead class="thead-inverse">
+    			<tr>
+		      	
         		 <th><%= t(:id) %></th>
 				 <th><%= t(:id_code) %></th>
 				 <th><%= t(:first_name) %></th>
@@ -44,20 +44,24 @@
 
 					<td class="center"><%= professional.branches.size %></td> 
 					<td class="center"><%= professional.clients.size %></td> 
-					<td class="center"><%= professional.professional_appointments.size %></td> 
+					<td class="center"><%= professional.appointments.size %></td> 
+
 					<td class="actions">
 						<%= link_to(t(:show), professional_path(professional.id), :class => 'action show') %>
 						<%= link_to(t(:edit), edit_professional_path(professional.id), :class => 'action edit') %>
 						<%= link_to(t(:delete), delete_professional_path(professional.id), :class => 'action show') %>
 						<%= link_to(t(:view_branches), {:controller => 'Branches', :professional_id => professional.id}, :class => 'action show') %>
 						<%= link_to(t(:view_clients), {:controller => 'clients', :professional_id => professional.id}, :class => 'action show') %>
-						<%= link_to(t(:view_appointments), {:controller => 'professional_appointments', :professional_id => professional.id}, :class => 'action show') %>		
+						<%= link_to(t(:view_appointments), {:controller => 'appointments', :professional_id => professional.id}, :class => 'action show') %>		
 					</td>
 				</tr>
 				<% end %>
 			</tbody>
 		</table>
 	</div>
-	
+
+<%= javascript_tag("$(document).ready( function () {$('#index_table').DataTable();} );") %>
+
+
 </div>
 

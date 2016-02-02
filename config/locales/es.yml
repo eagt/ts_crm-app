@@ -1,6 +1,6 @@
 ---
 es:
-
+  false: No
   view_branches: Ver Sucursales
   view_clients: Ver Clientes
   view_appointments: Ver Citas

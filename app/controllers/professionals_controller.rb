@@ -21,7 +21,7 @@ class ProfessionalsController < ApplicationController
 
   def new
 
-     @professional = Professional.new({:first_name => " Enter the  Professional name"})
+     @professional = Professional.new({:first_name => " "})
      @professional_count = Professional.count + 1
 
   end

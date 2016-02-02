@@ -16,9 +16,7 @@ class UpdateDelete < ActiveRecord::Base
 
 	belongs_to :contact_detail
 
-	belongs_to :company_appointment
-
-	belongs_to :professional_appointment
+	belongs_to :appointment
 
 	belongs_to :employment
 	

@@ -1,8 +1,6 @@
 
 
-<% @page_tittle = "Show" %>
-
-<%= link_to('<< All Professionals', professionals_path) %> 
+<%= link_to("<< " + t(:return_to), professionals_path, :class => 'back-link') %> 
 
 <div class="professionals show">
 	

@@ -6,7 +6,7 @@
 			<!-- This template will work only if I give or set a value to the variable f in the new and edit templates-->
 			
 				 <tr>
-	   			  <th><%= f.label(:id_code, t(:id)) %></th>
+	   			  <th><%= f.label(:id_code, t(:id_code)) %></th>
 	   			  <td><%= f.text_field(:id_code) %></td>
 	 			 </tr>
 				 <tr>
@@ -20,6 +20,7 @@
 				 <tr>
 				   <th><%= f.label(:dob, t(:dob)) %></th>
 				   <td><%= f.date_select(:dob, {:start_year => 1900, :end_year => Time.now.year}) %></td>
+				   <!-- This type of entering the date in this xpecific field isn't right as no professional will be born today and be working already . It needs to be fixed-->
 				 </tr>
 				 <tr>
 				   <th><%= f.label(:email, t(:email)) %></th>
