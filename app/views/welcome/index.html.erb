@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
@@ -42,10 +45,20 @@
             <h1 class="cover-heading">Welcome to TS CRM</h1>
             <p class="lead">Please select if you are a Company or a Professional, so we can take you to enjoy the easiest way to keep track on all your passed and future scheduled appointments. You can create appointments on the go, check what clients do you need meet and where and much more...</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Company</a>
-              <a href="#" class="btn btn-lg btn-default">Professional</a> <!-- these two will need to be maked into links to the login page but once any of them is clicked I will know what sort of cliente I am dealing with which will help to make much more future decisions -->  
 
-              <li><%= link_to("Logout", :action => 'exit') %></li>
+               <div >
+
+          <ul class="nav nav-tabs nav-justified">   
+
+            <%#= link_to("company", [:access]) %>
+            <a href="/access" <button role="button" class="btn btn-lg btn-link"></button><%= t(:company) %></a></li>
+            <a href="#" role="button" class="btn btn-lg btn-link"></button><%= t(:Professional) %></a></li>
+          </ul>
+        </div>
+           <!--    <a href="#" class="btn btn-lg btn-default">Company</a>
+              <a href="#" class="btn btn-lg btn-default">Professional</a>  --><!-- these two will need to be maked into links to the login page but once any of them is clicked I will know what sort of cliente I am dealing with which will help to make much more future decisions -->  
+
+
             </p>
           </div>
           
@@ -63,6 +76,6 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>  -->
   </body>
 </html>

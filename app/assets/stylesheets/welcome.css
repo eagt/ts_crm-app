@@ -13,10 +13,20 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
+}
+
+/* Custom link button */
+.btn-link,
+.btn-link:hover,
+.btn-link:focus {
+  color: #;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #b3ffd9;
+  border: 2px solid #000000;
 }
 
 
@@ -27,7 +37,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #428bca;
 }
 body {
   color: #fff;
@@ -110,7 +120,7 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 0 50px;
 }
 .cover .btn-lg {
   padding: 10px 20px;

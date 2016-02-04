@@ -7,8 +7,8 @@
 
     <title>TsCrm | <%= @page_title || "Profesional" %></title>  <!-- Like this I will show the name of the project & page on the (webtab) --> 
   
-    <%= stylesheet_link_tag('application', :media => 'all') %>
-    <%= javascript_include_tag('application') %>  <!-- This is having problems when I place 'public'. It needs attention...  --> 
+    <%= stylesheet_link_tag('public', :media => 'all') %>
+    <%= javascript_include_tag('public') %>  <!-- This is having problems when I place 'public'. It needs attention...  --> 
     <%= csrf_meta_tags %>   <!-- It seems this helps for the forgery part --> 
   
   </head>
@@ -120,7 +120,9 @@
 				  </div>
 			     <% end %>
 			   <div id="content">
+
 			     <%= yield %>
+           
 			   </div>
 		    </div>
 <!--/.Application RB Ends-->

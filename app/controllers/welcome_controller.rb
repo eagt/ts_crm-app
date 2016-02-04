@@ -13,6 +13,8 @@ layout "application"
   end
 
   def show
+
+    
   end
 
   def delete

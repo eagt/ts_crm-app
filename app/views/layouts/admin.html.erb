@@ -10,7 +10,7 @@
 
     <title>TsCrm | <%= @page_title || "Login" %></title>
 
-    <%= stylesheet_link_tag('application', :media => 'all') %>
+    <%= stylesheet_link_tag('public', :media => 'all') %>
     <%= javascript_include_tag('application') %>  <!-- This is having problems when I place 'public'. It needs attention...  --> 
     <%= csrf_meta_tags %>   <!-- It seems this helps for the forgery part --> 
 

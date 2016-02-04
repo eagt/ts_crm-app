@@ -2,21 +2,13 @@ Rails.application.routes.draw do
 
  
 
-  get 'welcome/index'
+  resources :access do
 
-  get 'welcome/create'
+    collection do
+      get :login
+    end
 
-  get 'welcome/new'
-
-  get 'welcome/show'
-
-  get 'welcome/delete'
-
-  get 'welcome/destroy'
-
-   root "public#index" 
-
-
+  end  
 
   resources :professionals do
 
