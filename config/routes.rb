@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
 
+ 
+
+  get 'welcome/index'
+
+  get 'welcome/create'
+
+  get 'welcome/new'
+
+  get 'welcome/show'
+
+  get 'welcome/delete'
+
+  get 'welcome/destroy'
+
    root "public#index" 
 
-  # get 'professional_appointments/index'
 
-  # get 'professional_appointments/show'
-
-  # get 'professional_appointments/new'
-
-  # get 'professional_appointments/edit'
-
-  # get 'professional_appointments/delete'
 
   resources :professionals do
 

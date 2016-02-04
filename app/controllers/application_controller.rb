@@ -13,4 +13,18 @@ def default_url_options(options = {})
   	{ locale: I18n.locale }.merge options
 end
 
+
+private
+
+
+  def confirm_logged_in
+      unless session[:user_id]
+      flash[:notice] = "Please log in"
+      redirect_to(:controller => 'access', :action => 'login')
+      return false # halts the before_action
+    else
+      return true
+    end    
+  end
+
 end

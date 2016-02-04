@@ -1,2 +1,62 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+
+
+<%= link_to("<< " + t(:return_to), companys_path, :class => 'back-link') %> <!-- In this part it is necessary to place a code 
+to show and define where it should go depending on where is it coming from) It can be always going back to companies I guess -->
+
+<div class="companys show">
+
+	 <h2><%= t(:show) + " " + t(:company) %></h2> <!-- Translating -->
+
+	 <div class="table-responsive">
+    <table id="show_table" class="display responsive" summary="company detail view">
+      <tbody>
+
+	 <tr>
+		<th> <%= t(:id) %></th>	
+		<td><%= @company.id %></td>
+	 </tr>
+	<th><%= t(:id_code) %></th>
+	<td><%= @company.id_code %></td>
+	 </tr>
+	 <tr>
+		<th><%=  t(:name) %></th>
+		<td><%= @company.name %></td>
+	 </tr>
+	 <tr>
+	 </tr>
+	 <tr>
+
+	 <!-- If Contact Details isn't placed in index  I think that this is a great place to place contact details
+	  <%= link_to(t(:contact_details), {:controller => 'contact_details', :professional_id => professional.id}, :class => 'action show') %> -->
+
+		<th> <%= t(:email) %></th>
+		<td><%= @company.email  %></td>
+	 </tr>
+
+<!-- <tr>
+		<th><%= t(:password_active) %></th>
+		<td><%= @company.pass_active ? 'true' : 'false' %></td>
+	 </tr>
+	 <tr>
+		<th><%= (:account_active) %></th>
+		<td><%= @company.acc_active ? 'true' : 'false' %></td>
+	 </tr>
+	 <tr>
+		<th><%= (:password_digest) %></th>
+		<td><%= @company.password_digest ? 'true' : 'false' %></td>
+	 </tr>
+	 <tr>
+		<th><%= t(:last_in) %></th>
+		<td><%= @company.last_in %></td>
+	 </tr> -->
+	 <tr>
+		<th><%= t(:Created_at) %></th>
+		<td><%= @company.created_at %></td>
+	 </tr>
+	 <tr>
+		<th> <%= t(:Updated_at) %></th>
+		<td><%= @company.updated_at %></td>
+	 </tr>
+   	 </table>
+
+</div>

@@ -1,26 +1,23 @@
 
-<% @page_tittle = "Delete" %>
-
-<%= link_to('<< All Professionals', professionals_path) %> 
+<%= link_to("<< " + t(:return_to), professionals_path, :class => 'back-link') %>
 
 <div class="professionals delete">
-	<h2> Delete Professional </h2>
+  <h2><%= t(:delete) + " " + t(:professional) %></h2>
 
 
-<%= form_for(:professional, :url => professional_path(@professional.id), :html => {:method => :delete}) do |f| %>
+		<%= form_for(:professional, :url => professional_path(@professional.id), :html => {:method => :delete}) do |f| %>
 
 
-	<p> Are you sure you want to permanently delete this professional? </p>
+				<p> A<p> <%= t(:delete_message) %> </p> </p>
 	
-	 <p class="reference-name"><%= @professional.first_name %></p>
+	 			<p class="reference-name"><%= @professional.first_name %></p>
 
 
 
-<div class="form_buttons">
-	<%= submit_tag("Delete Professional") %>
+			<div class="form-buttons">
+				<%= submit_tag(t(:delete) + " " + t(:professional)) %>
+			</div>
 
-</div>
-
-<% end %>
+		<% end %>
 
 </div>

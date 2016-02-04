@@ -1,2 +1,67 @@
-<h1>Companies#index</h1>
-<p>Find me in app/views/companies/index.html.erb</p>
+
+
+<% @page_title = t(:company).pluralize(locale) %>
+
+<div class="companies index">
+
+  <%= link_to(image_tag('plus_sign.png', :size => '13x13', :alt => '+') + " " +t(:add_new_company), new_company_path, :class => 'action new') %>
+
+  <div><%= @companies.size.to_s + " " + t(:company).pluralize(@companies.size, locale) + " " + t(:found) %></div> <!-- Here there is a way to pluralize the Object and to translate the variables -->
+
+
+
+	<div class="table-responsive">
+
+	<%= javascript_tag("$('#index_table').DataTable( {responsive: true, fixedHeader: true} );") %>
+		
+    <table id="index_table" class="display responsive" summary="company list">
+      <thead class="thead-inverse">
+    			<tr>
+		      	
+        		 <th><%= t(:id) %></th>
+				 <th><%= t(:id_code) %></th>
+				 <th><%= t(:name) %></th>
+				 <th><%= t(:branch).pluralize(locale) %></th>
+				 <th><%= t(:client).pluralize(locale) %></th>
+				 <th><%= t(:appointment).pluralize(locale) %></th>
+				 <th><%= t(:action) %></th>
+				</tr>
+			</thead>
+      		<tbody>
+
+				<% @companies.each do |company| %>
+
+				<tr class=" cycle('odd', 'even') %">
+					<td><%= company.id %></td>
+					<td><%= company.id_code %></td>
+					<td><%= company.name %></td>
+
+					<!-- I think I can place above a code that indicates if the company account is active or not, but I have to search for the way of doing it -->
+
+					<td class="center"><%= company.branches.size %></td> 
+					<td class="center"><%= company.clients.size %></td> 
+					<td class="center"><%= company.appointments.size %></td> 
+
+					<td class="actions">
+						<%= link_to(t(:show), company_path(company.id), :class => 'action show') %>
+						<%= link_to(t(:edit), edit_company_path(company.id), :class => 'action edit') %>
+						<%= link_to(t(:delete), delete_company_path(company.id), :class => 'action show') %>
+						<%= link_to(t(:view_branches), {:controller => 'Branches', :company_id => company.id}, :class => 'action show') %>
+						<%= link_to(t(:view_clients), {:controller => 'clients', :company_id => company.id}, :class => 'action show') %>
+						<%= link_to(t(:view_appointments), {:controller => 'appointments', :company_id => company.id}, :class => 'action show') %>	
+					
+					<!-- Here I think that is a great place to place contact details
+						<%= link_to(t(:contact_details), {:controller => 'contact_details', :company_id => company.id}, :class => 'action show') %> -->
+							
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
+<%= javascript_tag("$(document).ready( function () {$('#index_table').DataTable();} );") %>
+
+
+</div>
+

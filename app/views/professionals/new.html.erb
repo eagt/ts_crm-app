@@ -1,26 +1,29 @@
 <!--  The partial form is denoted by the underscore symbol(_) before the name of the form -->
 
-<% @page_tittle = "New Professional" %> 
 
 <!-- <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %> this is the old form of link--> 
 
-<%= link_to('<< All Professionals', professionals_path) %> <!-- This is the RESTful way of a link -->
+
+<!-- <%= link_to('<< All Professionals', professionals_path) %> <!-- This is the RESTful way of a link -->
+
+
+<%= link_to("<< " + t(:return_to), professionals_path, :class => 'back-link') %>
 
 <div class="professionals new">
 	
-	<h2>  Create Professional </h2>
+	<h2><%= t(:create) + " " + t(:professional) %></h2>
 
 
 	<%= form_for(@professional) do |f| %>
 
 			<%= render(:partial => "form", :locals =>{:f =>f}) %>	
 
-			<!-- The render above is used to run the view form (_form.html.erb) for professionals. -->
+			<!-- The render above is used to run the new and edit partial form (_form.html.erb) for professionals. -->
 			<!-- This is a classic example of Do Not Repeat Yourself -->
 
 			<div class="form_buttons">
 
-		       <%= submit_tag("Create Professional") %>
+		       <%= submit_tag(t(:create) + " " + t(:professional)) %>
 
 			</div>
 

@@ -1,11 +1,12 @@
 ---
 es:
+  d_o_b: Fecha de Nacimiento
   false: No
   view_branches: Ver Sucursales
   view_clients: Ver Clientes
   view_appointments: Ver Citas
   home: Inicio
-  setting: Configuración
+  settings: Configuración
   profile: Perfil
   help: Ayuda
   contact: Contactar
@@ -14,7 +15,7 @@ es:
   return_to: Retornar a lista
   action: Acción
   create: Crear
-  show: Mostrar
+  show: Detalles 
   edit: Editar
   update: Actualizar
   delete: Borrar
@@ -22,6 +23,7 @@ es:
   add_new_professional: Agregar nuevo profesional
   first_name: Nombre
   last_name: Apellido
+  name: Nombre
   email: Correo Electrónico
   id: Identificación
   id_code: ID No.

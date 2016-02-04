@@ -3,7 +3,7 @@ class Professional < ActiveRecord::Base
 	has_and_belongs_to_many :branches
 	has_many :contact_details
 
-	has_many :appintments
+	has_many :appointments
 
 	has_and_belongs_to_many :clients
 	has_many :employments

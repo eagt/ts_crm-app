@@ -21,12 +21,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  d_o_b: D.o.B
   false: No
   view_branches: View Branches
   view_clients: View Clients
   view_appointments: Ver Appointments
   home: Home
-  setting: Setting
+  settings: Settings
   profile: Profile
   help: Help
   contact: Contact
@@ -43,6 +44,7 @@ en:
   add_new_professional: Add new professional
   first_name: Name
   last_name: Last Name
+  name: Name
   email: e-mail
   id: ID
   id_code: ID No.

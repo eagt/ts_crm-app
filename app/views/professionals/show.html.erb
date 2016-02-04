@@ -3,57 +3,65 @@
 <%= link_to("<< " + t(:return_to), professionals_path, :class => 'back-link') %> 
 
 <div class="professionals show">
-	
-	<h2> Professional Details </h2>
 
-	<table summary = "" "" " Professional details view " >	
-	
+	 <h2><%= t(:show) + " " + t(:professional) %></h2> <!-- Translating -->
+
+	 <div class="table-responsive">
+    <table id="show_table" class="display responsive" summary="Professional detail view">
+      <tbody>
+
 	 <tr>
-		<th> ID </th>	
-		<td><%= @professional.id_code %></td>
+		<th> <%= t(:id) %></th>	
+		<td><%= @professional.id %></td>
+	 </tr>
+	<th><%= t(:id_code) %></th>
+	<td><%= @professional.id_code %></td>
 	 </tr>
 	 <tr>
-		<th> First Name </th>
+		<th><%=  t(:first_name) %></th>
 		<td><%= @professional.first_name %></td>
 	 </tr>
 	 <tr>
-		<th> Last Name </th>
+		<th><%= t(:last_name) %></th>
 		<td><%= @professional.last_name  %></td>
 	 </tr>
 	 <tr>
-		<th> D.o.B </th>
+		<th><%= t(:d_o_b) %></th>
 		<td><%= @professional.dob  %></td>
 	 </tr>
 	 <tr>
-		<th> email </th>
+		<th> <%= t(:email) %></th>
 		<td><%= @professional.email  %></td>
 	 </tr>
 	 <tr>
-		<th> Specialty </th>
+		<th><%= t(:specialty) %></th>
 		<td><%= @professional.specialty %></td>
 	 </tr>
-<!-- <tr>
-		<th> Password Active</th>
+
+	 <!-- If Contact Details isn't placed in index  I think that this is a great place to place contact details
+	  <%= link_to(t(:contact_details), {:controller => 'contact_details', :professional_id => professional.id}, :class => 'action show') %> -->
+	 <tr>
+		<th><%= t(:password_active) %></th>
 		<td><%= @professional.pass_active ? 'true' : 'false' %></td>
 	 </tr>
 	 <tr>
-		<th> Account Active </th>
+		<th><%= t(:account_active) %></th>
 		<td><%= @professional.acc_active ? 'true' : 'false' %></td>
 	 </tr>
 	 <tr>
-		<th> Password Digest </th>
+		<th><%= t(:password_digest) %></th>
 		<td><%= @professional.password_digest ? 'true' : 'false' %></td>
 	 </tr>
 	 <tr>
-		<th> Last in </th>
+		<th><%= t(:last_in) %></th>
 		<td><%= @professional.last_in %></td>
 	 </tr> -->
 	 <tr>
-		<th> Created at </th>
+		<th><%= t(:Created_at) %></th>
 		<td><%= @professional.created_at %></td>
 	 </tr>
 	 <tr>
-		<th> Updated at </th>
+		<th> <%= t(:Updated_at) %></th>
 		<td><%= @professional.updated_at %></td>
 	 </tr>
    	 </table>

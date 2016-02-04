@@ -23,6 +23,7 @@
 				 <th><%= t(:first_name) %></th>
 				 <th><%= t(:last_name) %></th>	
 				 <th><%= t(:specialty) %></th>
+				  <th><%= t(:company).pluralize(locale) %></th>
 				 <th><%= t(:branch).pluralize(locale) %></th>
 				 <th><%= t(:client).pluralize(locale) %></th>
 				 <th><%= t(:appointment).pluralize(locale) %></th>
@@ -41,6 +42,7 @@
 					<td><%= professional.specialty %></td>
 
 					<!-- I think I can place above a code that indicates if the professional account is active or not, but I have to search for the way of doing it -->
+					<td><%= professional.companies.size %></td>
 
 					<td class="center"><%= professional.branches.size %></td> 
 					<td class="center"><%= professional.clients.size %></td> 
@@ -52,7 +54,13 @@
 						<%= link_to(t(:delete), delete_professional_path(professional.id), :class => 'action show') %>
 						<%= link_to(t(:view_branches), {:controller => 'Branches', :professional_id => professional.id}, :class => 'action show') %>
 						<%= link_to(t(:view_clients), {:controller => 'clients', :professional_id => professional.id}, :class => 'action show') %>
-						<%= link_to(t(:view_appointments), {:controller => 'appointments', :professional_id => professional.id}, :class => 'action show') %>		
+						<%= link_to(t(:view_appointments), {:controller => 'appointments', :professional_id => professional.id}, :class => 'action show') %>
+
+
+						<!-- Here I think that is a great place to place contact details
+						<%= link_to(t(:contact_details), {:controller => 'contact_details', :professional_id => professional.id}, :class => 'action show') %> -->
+
+
 					</td>
 				</tr>
 				<% end %>
