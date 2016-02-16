@@ -1,4 +1,6 @@
 class UpdateDeletesController < ApplicationController
+  
+
   def index
   end
 

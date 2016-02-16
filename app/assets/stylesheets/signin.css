@@ -1,13 +1,16 @@
+/* This template is part of the signin area where is posible to select log in  / sign up */
+
+
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #eee;
 }
 
 .form-signin {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {

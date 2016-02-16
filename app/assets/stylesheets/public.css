@@ -12,8 +12,12 @@
  *
  *= require bootstrap-datetimepicker
  *= require bootstrap
+ *= require normalize
+ *= require style
+
  *= require jquery.dataTables.min
  *= require_self
  *= require dashboard
  *= require responsive.dataTables.min
+ *= require signin
  */

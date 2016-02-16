@@ -1,6 +1,10 @@
 class WelcomeController < ApplicationController
   
-layout "application"
+layout "welcome"
+
+def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+end
 
 
   def index
@@ -13,7 +17,6 @@ layout "application"
   end
 
   def show
-
     
   end
 

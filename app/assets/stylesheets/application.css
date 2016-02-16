@@ -12,6 +12,9 @@
  *
  * require bootstrap-datetimepicker
  *= require bootstrap
- *= require_tree .
+ *= require signin 
  *= require_self
+ *= require jquery.dataTables.min
+ *= require responsive.dataTables.min
+ *= require_tree .
  */

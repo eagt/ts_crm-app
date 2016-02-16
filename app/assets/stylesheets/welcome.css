@@ -1,5 +1,11 @@
+
+
 /*
  * Globals
+
+ *= require bootstrap
+ *= require_self
+
  */
 
 /* Links */
@@ -25,7 +31,7 @@ a:hover {
 .btn-link:focus {
   color: #;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #b3ffd9;
+  background-color: #b2ffd9;
   border: 2px solid #000000;
 }
 
@@ -65,7 +71,7 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding: 10px;
 }
 
 
@@ -73,7 +79,7 @@ body {
  * Header
  */
 .masthead-brand {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -120,7 +126,7 @@ body {
  */
 
 .cover {
-  padding: 0 50px;
+  padding: 0 30px;
 }
 .cover .btn-lg {
   padding: 10px 20px;

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     collection do
       get :login
     end
-
   end  
 
   resources :professionals do
@@ -15,9 +14,9 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
-
   end    
 
+  # This can be useul for login map.resources :users, :collection => { :signup => :get, :register => :post }
 
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
