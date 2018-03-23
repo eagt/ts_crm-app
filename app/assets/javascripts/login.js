@@ -1,6 +1,9 @@
 /*
-//= require jquery
-//= require signin_index
-//= require jquery_ujs
-
+= require jquery
+= require signin_index
+= require jquery_ujs
+//= require index
 */
+
+
+
